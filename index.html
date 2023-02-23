@@ -20,7 +20,20 @@
 <script type="text/javascript">
 	new WOW().init()
 </script>
-    <style>
+<script src="https://raw.githack.com/mburakerman/prognroll/master/src/prognroll.min.js"></script>
+
+    <script>
+     /* $(function() {
+  $("body").prognroll();
+});*/
+$(function() {
+  $("body").prognroll({
+    height: 5, // progress bar height
+    color: "tomato", // progress bar background color
+    custom: false // if you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+    </script>    <style>
         .elts{
             border: 1px solid transparent;
             box-shadow: 0px 0px 10000px rgb(230, 230, 230);
