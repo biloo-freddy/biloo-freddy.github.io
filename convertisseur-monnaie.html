@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/dist/js/bootstrap.js">
+</head>
+<body>
+    <h1 class="text-capitalize"> device</h1>
+    <form action="" method="post">
+        <div class="input-group mb-3 mt-5 ml-2">
+            <input type="number" name="euro" id="euro" class="">
+            <div class="input-group-append">
+                <span class="input-group-text">,00 EURO</span>
+            </div>
+        </div>
+        <div class="input-group mb-1 ml-2">
+            <input type="number" name="fcfa" id="fcfa" form-control>
+            <div class="input-group-append">
+                <span class="input-group-text">,00 FCFA</span>
+            </div>
+        </div>
+        <div class="input-group mb-1 ml-2 mt-3">
+            <input type="number" name="dollar" id="dollar">
+            <div class="input-group-append"><span class="input-group-text">,00 DOLLAR</span></div>
+        </div>
+        <span class="d-block text-danger" id="affiche"></span>
+    </form>
+    <script>
+        var fcfa=document.getElementById('fcfa');
+        var euro= document.getElementById('euro');
+        var afficher=document.getElementById('affiche');
+        var dollar=document.getElementById('dollar');
+        euro.addEventListener('input',ok)
+        
+        function ok(){
+            var fc=fcfa.value=this.value*700;
+            afficher.innerHTML='';
+        };
+        fcfa.addEventListener('input',function(){
+           var eu= this.value/700;
+            euro.value=eu;
+            dollar.value=this.value/500;
+        })
+        dollar.addEventListener("input",function(){
+            fcfa.value=this.value*500;
+        })
+        btn.addEventListener('click',function(){
+            if(!(euro.value='')){
+                if(!(fcfa.value='')){
+                afficher.innerHTML='appeler votre banquier et demande un remboursement du solde manqunat';
+            euro.value=fcfa.value/700;
+        fcfa.value=euro.value*700;}
+                else{
+                    afficher.innerHTML='veuillez remplir au moins un champs avant de valider la conversion';
+                    euro.value=eu;
+        fcfa.value=euro.value/700;
+                }
+            }
+            else{
+                afficher.innerHTML='appeler votre banquier et demande un remboursement du solde manquna';
+            }
+        })
+
+    </script>
+</body>
+</html>
