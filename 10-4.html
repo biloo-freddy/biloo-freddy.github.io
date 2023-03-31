@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="typelighter.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.j"></script>
+    <script src="jquery.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" ></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap\js\dist\popover.js"></script>
+    <script src="bootstrap\js\dist\tooltip.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="Hover/css/hover.css">
+<script type="text/javascript">
+	new WOW().init()
+</script>
+<script src="https://raw.githack.com/mburakerman/prognroll/master/src/prognroll.min.js"></script>
+
+    <script>
+     /* $(function() {
+  $("body").prognroll();
+});*/
+$(function() {
+  $("body").prognroll({
+    height: 5, // progress bar height
+    color: "tomato", // progress bar background color
+    custom: false // if you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+    </script>    <style>
+:root {
+  --main-color: #ecf0f1;
+  --point-color: tomato;
+  --size: 5px;
+}
+
+.loader {
+  background-color: var(--main-color);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  align-content: center; 
+  justify-content: center;  
+  z-index: 100000;
+}
+
+.loader__element {
+  border-radius: 100%;
+  border: var(--size) solid var(--point-color);
+  margin: calc(var(--size)*2);
+}
+
+.loader__element:nth-child(1) {
+  animation: preloader .6s ease-in-out alternate infinite;
+}
+.loader__element:nth-child(2) {
+  animation: preloader .6s ease-in-out alternate .2s infinite;
+}
+
+.loader__element:nth-child(3) {
+  animation: preloader .6s ease-in-out alternate .4s infinite;
+}
+
+@keyframes preloader {
+  100% { transform: scale(2); }
+}
+        .experience{
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 10000px rgb(230, 230, 230);
+            margin: 20px;
+            
+        }
+        .elts{
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 10000px rgb(230, 230, 230);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            height: 300px;
+        }
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .p1{
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 10000px rgb(230, 230, 230);
+            margin-top: 100px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(255, 92, 71);
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-family: 'Catamaran', sans-serif;
+
+
+        }
+
+        body{
+            background-color: rgb(100, 100, 100);
+font-family: 'Catamaran', sans-serif;
+
+        }
+        .div1{
+            box-shadow: -3px 0px 100px rgb(218, 203, 184);
+            height: 200px;
+        }
+        .div2{
+            margin-top: 10px;
+        }
+.citation{
+font-family:Catamaran, sans-serif;}
+/* Animation des barres de progression */
+ 
+.html{
+    background: crimson;
+    animation: html 7s forwards 1; /* 1 au lien de infinite */
+}
+@keyframes html{ /*temps*/
+    0%{width:0;} /*début*/
+    40%{width:92%;}
+    100%{width:92%;} /*fin*/
+}
+ 
+.css{
+    background: gold;
+    animation: pi 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes pi{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:85%;}
+    100%{width:85%;}/*fin*/
+}
+ 
+.php{
+    background: green;
+    animation: pa 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes pa{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:70%;}
+    100%{width:70%;}/*fin*/
+}
+ 
+.javascripts{
+    background: orangered;
+    animation: framework 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framework {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+ 
+.bar_cms{
+    background: dodgerblue;
+    animation: cms 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes cms { /*temps*/
+    0%{width:0;} /*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+.soul1{
+    width: 240px;
+    height: 3px;
+}
+.soul2{
+    width: 200px;
+    height: 3px;
+}
+.soul{
+    background:tomato;
+    animation: p 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes p{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:100%;}
+    100%{width:100%;}/*fin*/
+}
+.jquery{
+    background: gold;
+    animation: ps 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes ps{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+ 
+.bootstrap{
+    background: green;
+    animation: pp 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes pp{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:95%;}
+    100%{width:95%;}/*fin*/
+}
+.wordpress{
+    background: orangered;
+    animation: framew 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framew {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width: 85%;}
+    100%{width:85%;}/*fin*/
+}
+.prestashop{
+    background: orangered;
+    animation: framewo 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framewo {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.souligne{
+    background-color: tomato;
+    height: 3px;
+    animation: framewo 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framewo {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:240px;}
+    100%{width:240px;}/*fin*/
+}
+/*bureautique*/
+.acces{
+    background: orangered;
+    animation: acces 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes acces {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+.word{
+    background: orangered;
+    animation: word 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes word {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:70%;}
+    100%{width:70%;}/*fin*/
+}
+.excel{
+    background: orangered;
+    animation: excel 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes excel {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+.powerpoint{
+    background: orangered;
+    animation: powerpoint 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes powerpoint {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:50%;}
+    100%{width:50%;}/*fin*/
+}
+.mysql{
+    background: orangered;
+    animation: mysql 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes mysql {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:70%;}
+    100%{width:70%;}/*fin*/
+}
+.sql{
+    background: orangered;
+    animation: sql 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes sql {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:75%;}
+    100%{width:75%;}/*fin*/
+}
+/*maintenance*/
+.materiel{
+    background: orangered;
+    animation: materiel 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes materiel {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+.systeme{
+    background: orangered;
+    animation: systeme 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes systeme {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:90%;}
+    100%{width:90%;}/*fin*/
+}
+.canvas{
+    background: orangered;
+    animation: canvas 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes canvas {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+.photoshop{
+    background: orangered;
+    animation: photoshop 7s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes photoshop {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:40%;}
+    100%{width:40%;}/*fin*/
+}
+.style{
+    width: 100px;
+    background-color: tomato;
+    border-radius: 20px;
+    height: 5px;
+
+}
+.cadre{
+    border: 2px solid tomato;
+    margin-left: 10px;
+    display: inline;
+}
+.tomato{
+    color: tomato;
+}
+
+
+
+
+    </style>
+</head>
+</head>
+<body class="bg-light">
+<div class="loader">
+  <span class="loader__element"></span>
+  <span class="loader__element"></span>
+  <span class="loader__element"></span>
+</div>
+<div class="invisible">
+    <div class="container-fluid  bg-light div1 border  w-100 " data-aos="fade-down"  style="padding: 0px;">
+        <div class="carousel  slide w-100 rounded  mx-auto"data-ride="carousel"  id="carousel" style="margin: 0px; box-shadow: -3px 0px 100px rgb(218, 203, 184);">
+            <ol class="carousel-indicators">
+                <li class="active rounded-circle " data-slide-to="0" data-target="#carousel"  style="height: 10px; width: 10px;"></li>
+                <li data-slide-to="1" data-target="#carousel" style="width: 10px; height: 10px;" class="rounded-circle "></li>
+            </ol>
+            <div class="carousel-inner ">
+                <div class="carousel-item active">
+                    <img src="foret1.jpg" alt="" class=" w-100 d-block" style="height: 200px;">
+                </div>
+                <div class="carousel-item">
+                        <img src="foret2.jpg" alt="" class="w-100 d-block" style="height: 200px;">
+                </div>
+            </div>
+       <!--  <a href="#carousel" class="carousel-control-prev" data-slide='prev'>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">previous</span>
+    
+        </a>
+        <a href="#carousel" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">next</span>
+        </a>-->
+        </div>
+        <img src="Chico1.jpg" alt="" class="rounded-circle  position-relative d-block" style="height:110px; width: 100px; bottom:50px;">
+        <h1><strong class=" text-uppercase position-relative" style="bottom: 100px; left:100px; font-weight: 300; font-size: 28px;">bilo'o freddy </strong></h1>
+        <p class="ml-1 position-relative w-75" style="bottom: 120px; left: 80px;"> <span class="text-lowercase typeWriter text-right ml-3 text-capitalize   " data-speed="20" style="color: tomato;" data-text='["developpeur-web","web-designer","integrateur-web"]'></span></p>
+    </div>
+    <div class="container  div2 mb-5" data-aos="fade-up" data-aos-duration="3000">
+        <p class="text muted text-italic p1 bg-light text-muted text-italique rounded citation">
+            "Militant de la technologie, passionné du développement web; je possède des bases solides en bureautique, maintenance informatique et en design commercial et une bonne maîtrise des réseaux sociaux"</p>
+    </div>
+    <h5 class="cadre text-uppercase">experiences</h5> <br><br>
+    <div class="container-fluid row align-items-center mb-5">
+        <div class="col-5 d-none d-lg-inline-block align-items-center">
+            <img src="experience.png" alt="" >
+        </div>
+
+    <div class="experience pr-5 pl-5  col-lg-6 col-12">
+            <div class=" cime d-flex justify-content-end align-items-center">
+
+                <div><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+                <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+                <span class="d-block"> septembre, 2020 - mai, 2021</span>
+                <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+                </div>
+                </div>
+                <hr style="border: 1px dashed coral;">
+ 
+            <div class="cime d-flex justify-content-end align-items-center" >
+                <div class="order-md-2"><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+                <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+                <span class="d-block"> septembre, 2020 - mai, 2021</span>
+                <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+                </div>
+                </div>
+                <hr style="border: 1px dashed coral;">
+                <div class="cime d-flex justify-content-end align-items-center ">
+                    <div><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+                    <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+                    <span class="d-block"> septembre, 2020 - mai, 2021</span>
+                    <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+                    </div>
+                    </div>
+                    <hr style="border: 1px dashed coral;">
+                    <div class="cime d-flex justify-content-end align-items-center " >
+                        <div><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+                        <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+                        <span class="d-block"> septembre, 2020 - mai, 2021</span>
+                        <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+                        </div>
+                        </div>
+                        
+
+
+            <div></div>
+        </div>
+    </div>
+</div>
+    <h5 class="cadre text-uppercase">education</h5> <br><br>
+
+    <div class=" container-fluid row align-items-center">
+        <div class="col-lg-6 col-12">
+    <div class="w-50 mx-auto text-center">
+        <img src="Chico1.jpg" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+    <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+    <span class="d-block"> septembre, 2020 - mai, 2021</span>
+    <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+    </div>
+
+    <div class="w-50 mx-auto text-center">
+        <img src="Chico1.jpg" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+    <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+    <span class="d-block"> septembre, 2020 - mai, 2021</span>
+    <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+    </div>
+    <div class="w-50 mx-auto text-center">
+        <img src="Chico1.jpg" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+    <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+    <span class="d-block"> septembre, 2020 - mai, 2021</span>
+    <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+    </div>
+    <div class="w-50 mx-auto text-center">
+        <img src="Chico1.jpg" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+    <h6 class="text-uppercase"> cime(centre d'impots des moyennes entreprise)</h6>
+    <span class="d-block"> septembre, 2020 - mai, 2021</span>
+    <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant et </p>
+    </div>
+
+
+</div>
+<div class="col-5 d-none d-lg-inline-block text-right">
+    <img src="ecoles.png" alt="" >
+</div>
+</div>
+
+    <h5 class=" text-uppercase ml-2 hvr-underline-from-right  underline-lef " id="p" style="border: solid 2px tomato; display: inline;">compentences</h5>
+    <h5 class=" text-uppercase ml-5  mt-3" id="parent"> techonoligie web</h5>
+    <div class="ml-5 style" id="soulign" style="max-width: 100px; height: 5px;">
+        
+    </div>
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-column flex-lg-row mt-5">
+        <div class="mb-5" data-aos="fade" data-aos-duration="1000" id="competences">
+            <div class="elts" id="">
+            <h4 class="capitalize text-center text-muted"> langages</h4>
+            <hr>
+                <h5>html</h5>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="html"><span class="text-center"> 92%</span></div>
+                </div>
+                <h5>css</h5>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; width: 0px;" id="css"> <span class="text-center">85%</span></div>
+                </div>
+                <h5>javascripts</h5>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="javascripts"><span class="text-center">75%</span></div>
+                </div>
+                <h5>php</h5>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="php"> <span class="text-center">70%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5 elts" data-aos="fade-right" data-aos-duration="1500" >
+            <h4 class="capitalize text-center text-uppercase text-muted">librerie</h4>
+            <hr>
+            <div>
+                <h5  >jquery/  javascripts</h5>
+                <div class="progress w-100">
+                    <div class="progress-bar"  role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="jquery"><span class="text-center">60%</span></div>
+                </div>
+                <h5>bootstrap/ css</h5>
+                <div class="progress"id="librerie" >
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="bootstrap"><span class="text-center">95%</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5 elts" data-aos="fade-down" data-aos-duration="1500">
+            <h4 class="text-uppercase text-center  text-muted">cms</h4>
+            <hr>
+            <div>
+                <h5  > wordpress</h5>
+                <div class="progress">
+                    <div class="progress-bar  " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="wordpress"> <span class="ext-center"> 85%</span></div>
+                </div>
+                <h5>prestashop</h5>
+                <div class="progress" id="cmd" >
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="prestashop"> <sapn class="ext-center"> 60%</sapn></div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5 elts" data-aos="fade-down" data-aos-duration="1500">
+            <h4 class="text-uppercase text-center  text-muted">base de donnees</h4>
+            <hr>
+            <div>
+                <h5  > mysql</h5>
+                <div class="progress">
+                    <div class="progress-bar  " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="mysql"> <span class="ext-center"> 85%</span></div>
+                </div>
+                <h5>sql</h5>
+                <div class="progress" id="donnees" >
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="sql"> <sapn class="ext-center"> 60%</sapn></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 class=" text-uppercase ml-5 text-muted"> autres</h3>
+    <div class="style ml-5"></div>
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-column flex-lg-row">
+        <div class="mb-5" data-aos="fade-up" data-aos-duration="1500" id="competences">
+            <div class="elts" id="">
+            <h4 class="capitalize text-center text-muted"> bureautique</h4>
+            <hr>
+                <h5>word</h5>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="word"><span class="text-center"> 92%</span></div>
+                </div>
+                <h5 id="bureautique">excel</h5>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="excel"> <span class="text-center">85%</span></div>
+                </div>
+                <h5 >acces</h5>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="acces"><span class="text-center">75%</span></div>
+                </div>
+                <h5>powepoints</h5>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="powerpoint"> <span class="text-center">70%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5 elts" data-aos="fade-right" data-aos-duration="1500" >
+            <h4 class="capitalize text-center text-uppercase text-muted">maintenance infortique</h4>
+            <hr>
+            <div>
+                <h5 id="maintenance"  >materiel</h5>
+                <div class="progress w-100">
+                    <div class="progress-bar"  role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="materiel"><span class="text-center">60%</span></div>
+                </div>
+                <h5>systeme</h5>
+                <div class="progress"id="librerie" >
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="systeme"><span class="text-center">95%</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5 elts" data-aos="fade-down" data-aos-duration="1500">
+            <h4 class="text-uppercase text-center  text-muted">desgn graphique</h4>
+            <hr>
+            <div>
+                <h5 id="graphique" > photoshop</h5>
+                <div class="progress">
+                    <div class="progress-bar  " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="photoshop"> <span class="ext-center"> 85%</span></div>
+                </div>
+                <h5>canvas</h5>
+                <div class="progress" >
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="canvas"> <sapn class="ext-center"> 60%</sapn></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <h5 class="cadre text-uppercase">
+        personnel
+    </h5>
+    <div class="container-fluid row">
+        <div class="col-12 col-lg-5 experience">
+            <h5 class="text-uppercase">qualites</h5>
+            <ul>
+                <li class="text-muted">creativite</li>
+                <li class="text-muted">adaption</li>
+                <li class="text-muted">negociation</li>
+                <li class="text-muted"> un peu blagueur</li>
+                <li class="text-muted"> etc..</li>
+            </ul>
+        </div>
+        <div class="col-12 col-lg-5 experience">
+            <h5 class="text-uppercase">centres d'interets</h5>
+            <ul>
+                <li class="text-muted">jeux video</li>
+                <li class="text-muted">musique</li>
+                <li class="text-muted">lecture</li>
+                <li class="text-muted"> reseaux sociaux</li>
+                <li class="text-muted"> etc..</li>
+            </ul>
+        </div>
+    </div>
+    <br>
+
+    <h5 class="cadre text-uppercase ">projets</h5> <br>
+    <h6 class=" text-uppercase ml-5 mt-3 h5 d-inline"> realises</h6> <span class="badge rounded-circle text-light p-4 ml-4   " style="background-color: tomato;">6</span>
+    <div class="style ml-5"></div>
+    <div class="container-fluid row">
+        <div class="experience col-12 col-md-5 mx-auto"> 
+            <h5 class=" text-uppercase pl-3 pt-3">sublime deco</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, cumque aliquam id porro fugiat quia.
+            </p>
+            <div class="text-right p-3">
+                <a href="">lien</a>
+            </div>
+        </div>
+        <div class="experience col-12 col-md-5 mx-auto "> 
+            <h5 class=" text-uppercase pl-3 pt-3">sublime deco</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, cumque aliquam id porro fugiat quia.
+            </p>
+            <div class="text-right p-3">
+                <a href="">lien</a>
+            </div>
+        </div>
+        <div class="experience col-12 col-md-5 mx-auto"> 
+            <h5 class=" text-uppercase pl-3 pt-3">sublime deco</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, cumque aliquam id porro fugiat quia.
+            </p>
+            <div class="text-right p-3">
+                <a href="">lien</a>
+            </div>
+        </div>
+        <div class="experience col-12 col-md-5 mx-auto"> 
+            <h5 class=" text-uppercase pl-3 pt-3">sublime deco</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, cumque aliquam id porro fugiat quia.
+            </p>
+            <div class="text-right p-3">
+                <a href="">lien</a>
+            </div>
+        </div>
+<footer class="w-100" style="height: 250px; background-color: tomato; margin: 0px; padding: 0px;"></footer>
+</div>
+
+
+
+        <script>
+            
+// Ajoute les classes pour les animations
+function BarAnimation() {
+  document.getElementById('html').classList.add('html');
+  document.getElementById('css').classList.add('css');
+  document.getElementById('javascripts').classList.add('javascripts');
+  document.getElementById('php').classList.add('php');
+
+}
+function BarAnimation1(){
+    document.getElementById('jquery').classList.add('jquery');
+  document.getElementById('bootstrap').classList.add('bootstrap');
+}
+function BarAnimation2(){
+    document.getElementById('prestashop').classList.add('prestashop');
+  document.getElementById('wordpress').classList.add('wordpress');
+}
+function bureautique() {
+  document.getElementById('word').classList.add('word');
+  document.getElementById('excel').classList.add('excel');
+  document.getElementById('acces').classList.add('acces');
+  document.getElementById('powerpoint').classList.add('powerpoint');
+
+}
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval5 = setInterval(function() {
+    if ( checkVisible(document.getElementById('bureautique')))     {
+        bureautique();
+        clearInterval(interval5); // Désactive le SetInterval
+    }
+}, 300);
+// donnees
+function donnees(){
+    document.getElementById('mysql').classList.add('mysql');
+  document.getElementById('sql').classList.add('sql');
+}
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval6 = setInterval(function() {
+    if ( checkVisible(document.getElementById('donnees')))     {
+        donnees();
+        clearInterval(interval6); // Désactive le SetInterval
+    }
+}, 300);
+//maintenance
+function maintenance(){
+    document.getElementById('materiel').classList.add('materiel');
+  document.getElementById('systeme').classList.add('systeme');
+}
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval7 = setInterval(function() {
+    if ( checkVisible(document.getElementById('maintenance')))     {
+        maintenance();
+        clearInterval(interval7); // Désactive le SetInterval
+    }
+}, 300);
+//graphique
+function graphique(){
+    document.getElementById('photoshop').classList.add('photoshop');
+  document.getElementById('canvas').classList.add('canvas');
+}
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval8 = setInterval(function() {
+    if ( checkVisible(document.getElementById('maintenance')))     {
+        graphique();
+        clearInterval(interval8); // Désactive le SetInterval
+    }
+}, 300);
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+
+
+// Check si l'element passé en param est affiché sur l'écran
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval = setInterval(function() {
+    if ( checkVisible(document.getElementById('competences')))     {
+        BarAnimation();
+        clearInterval(interval); // Désactive le SetInterval
+    }
+}, 300);
+var interval3 = setInterval(function() {
+    if ( checkVisible(document.getElementById('cmd')))     {
+        BarAnimation2();
+        clearInterval(interval3); // Désactive le SetInterval
+    }
+}, 300);
+var interval2= setInterval(function() {
+    if ( checkVisible(document.getElementById('librerie')))     {
+        BarAnimation1();
+        clearInterval(interval2); // Désactive le SetInterval
+    }
+}, 300);
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+<script type = "text/javascript">
+
+         <!--
+            function Redirect() {
+               window.location = "https://biloo-freddy.github.io/10-3.html";
+            }
+            setTimeout('Redirect()', 5000);
+         //-->
+      </script>
+    
+</body>
+</html>
+
+
+
+
+
