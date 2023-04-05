@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="typelighter.min.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery.j"></script>
+    <script src="jquery.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Catamaran&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" ></script>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap\js\dist\popover.js"></script>
+    <script src="bootstrap\js\dist\tooltip.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="Hover/css/hover.css">
+<script type="text/javascript">
+	new WOW().init()
+</script>
+<script src="https://raw.githack.com/mburakerman/prognroll/master/src/prognroll.min.js"></script>
+
+    <script>
+     /* $(function() {
+  $("body").prognroll();
+});*/
+$(function() {
+  $("body").prognroll({
+    height: 5, // progress bar height
+    color: "tomato", // progress bar background color
+    custom: false // if you make it true, you can add your custom div and see it's scroll progress on the page
+  });
+});
+    </script>    <style>
+        .experience{
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 10000px rgb(230, 230, 230);
+            margin: 20px;
+            
+        }
+        .elts{
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 10000px rgb(230, 230, 230);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            height: 300px;
+        }
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .hidden{
+            overflow-x: hidden;
+        }
+        .p1{
+            border: 1px solid transparent;
+            box-shadow: 0px 0px 10000px rgb(230, 230, 230);
+font-style:italic;
+            margin-top: 100px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+font-family: 'Catamaran', sans-serif;
+
+
+        }
+
+        body{
+            background-color: rgb(100, 100, 100);
+font-family: 'Catamaran', sans-serif;
+
+        }
+        .div1{
+            box-shadow: -3px 0px 100px rgb(218, 203, 184);
+            height: 200px;
+        }
+        .div2{
+            margin-top: 10px;
+        }
+.citation{
+font-family:Catamaran, sans-serif;}
+/* Animation des barres de progression */
+ 
+.html{
+    background: crimson;
+    animation: html 2s forwards 1; /* 1 au lien de infinite */
+}
+@keyframes html{ /*temps*/
+    0%{width:0;} /*début*/
+    40%{width:92%;}
+    100%{width:92%;} /*fin*/
+}
+input{
+    height: 80px;
+    outline: none;
+    font-style: italic;
+    margin: auto;
+    
+}
+.submit{
+    padding: 10px;
+    height: 50px;
+    margin-left: 50px;
+    width: 130px;
+    font-style: normal;
+    border: 1px solid transparent;
+    border-radius: 4%;
+
+}
+textarea{
+    outline: none;
+    font-style: oblique;
+    margin: auto;
+}
+ 
+.css{
+    background: gold;
+    animation: pi 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes pi{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:85%;}
+    100%{width:85%;}/*fin*/
+}
+ 
+.php{
+    background: green;
+    animation: pa 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes pa{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:70%;}
+    100%{width:70%;}/*fin*/
+}
+ 
+.javascripts{
+    background: orangered;
+    animation: framework 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framework {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+ 
+.bar_cms{
+    background: dodgerblue;
+    animation: cms 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes cms { /*temps*/
+    0%{width:0;} /*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+.soul1{
+    width: 240px;
+    height: 3px;
+}
+.soul2{
+    width: 200px;
+    height: 3px;
+}
+.soul{
+    background:tomato;
+    animation: p 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes p{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:100%;}
+    100%{width:100%;}/*fin*/
+}
+.jquery{
+    background: gold;
+    animation: ps 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes ps{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+ 
+.bootstrap{
+    background: green;
+    animation: pp 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes pp{ /*temps*/
+    0%{width:0;}/*début*/
+    40%{width:95%;}
+    100%{width:95%;}/*fin*/
+}
+.wordpress{
+    background: orangered;
+    animation: framew 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framew {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width: 85%;}
+    100%{width:85%;}/*fin*/
+}
+.prestashop{
+    background: orangered;
+    animation: framewo 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framewo {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.souligne{
+    background-color: tomato;
+    height: 3px;
+    animation: framewo 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes framewo {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:240px;}
+    100%{width:240px;}/*fin*/
+}
+/*bureautique*/
+.acces{
+    background: orangered;
+    animation: acces 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes acces {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+.word{
+    background: orangered;
+    animation: word 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes word {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:70%;}
+    100%{width:70%;}/*fin*/
+}
+.excel{
+    background: orangered;
+    animation: excel 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes excel {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:60%;}
+    100%{width:60%;}/*fin*/
+}
+.powerpoint{
+    background: orangered;
+    animation: powerpoint 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes powerpoint {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:50%;}
+    100%{width:50%;}/*fin*/
+}
+.mysql{
+    background: orangered;
+    animation: mysql 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes mysql {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:70%;}
+    100%{width:70%;}/*fin*/
+}
+.sql{
+    background: orangered;
+    animation: sql 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes sql {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:75%;}
+    100%{width:75%;}/*fin*/
+}
+/*maintenance*/
+.materiel{
+    background: orangered;
+    animation: materiel 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes materiel {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+.systeme{
+    background: orangered;
+    animation: systeme 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes systeme {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:90%;}
+    100%{width:90%;}/*fin*/
+}
+.canvas{
+    background: orangered;
+    animation: canvas 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes canvas {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:80%;}
+    100%{width:80%;}/*fin*/
+}
+.photoshop{
+    background: orangered;
+    animation: photoshop 2s forwards 1;/* 1 au lien de infinite */
+}
+@keyframes photoshop {/*temps*/
+    0%{width:0;}/*début*/
+    40%{width:40%;}
+    100%{width:40%;}/*fin*/
+}
+.style{
+    width: 100px;
+    background-color: tomato;
+    border-radius: 20px;
+    height: 5px;
+
+}
+.cadre{
+    border: 2px solid tomato;
+    margin-left: 10px;
+    display: inline;
+}
+.tomato{
+    color: tomato;
+}
+/* Animation property */
+.button {
+  animation: wiggle 2s linear infinite;
+animation-delay:3s;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+body {
+  background: #000;
+}
+
+.button {
+
+  
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 0 0 0.2em 0.2em;
+  color: #fff;
+  font-family: Helvetica, Arial, Sans-serif;
+  font-size: 1em;
+  transform-origin: 50% 5em;
+}
+.reseaux{
+            width: 40px;
+            height: 40px;
+            border: 1px solid transparent;
+            border-radius: 50%;
+        }
+
+
+
+
+    </style>
+</head>
+</head>
+<body class="bg-light position-relative">
+    <div class="container-fluid  bg-light div1 border  w-100 " data-aos="fade-down"  style="padding: 0px;">
+        <div class="carousel  slide w-100 rounded  mx-auto"data-ride="carousel"  id="carousel" style="margin: 0px; box-shadow: -3px 0px 100px rgb(218, 203, 184);">
+            <ol class="carousel-indicators">
+                <li class="active rounded-circle " data-slide-to="0" data-target="#carousel"  style="height: 10px; width: 10px;"></li>
+                <li data-slide-to="1" data-target="#carousel" style="width: 10px; height: 10px;" class="rounded-circle "></li>
+            </ol>
+            <div class="carousel-inner ">
+
+                <div class="carousel-item active">
+                    <img src="foret1.jpg" alt="" class=" w-100 d-block" style="height: 200px;">
+                </div>
+                <div class="carousel-item">
+                        <img src="foret2.jpg" alt="" class="w-100 d-block" style="height: 200px;">
+                </div>
+            </div>
+       <!--  <a href="#carousel" class="carousel-control-prev" data-slide='prev'>
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">previous</span>
+    
+        </a>
+        <a href="#carousel" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="sr-only">next</span>
+        </a>-->
+        </div>
+        <img src="Chico.jpg" alt="" class="rounded-circle  position-relative d-block" style="height:110px; width: 100px; bottom:50px;">
+        <h1><strong class=" text-uppercase position-relative" style="bottom: 100px; left:100px; font-weight: 300; font-size: 28px;">bilo'o freddy </strong></h1>
+        <p class="ml-1 position-relative w-75" style="bottom: 120px; left: 80px;"> <span class="text-lowercase typeWriter text-right ml-3 text-capitalize   " data-speed="20" style="color: tomato;" data-text='["developpeur-web","web-designer","integrateur-web"]'></span></p>
+    </div>
+    <div class="container  div2 mb-5" data-aos="fade-up" data-aos-duration="3000">
+        <p class="text-muted text-italic p1 bg-light  text-italique rounded citation">
+            "Militant de la technologie, passionné du développement web; je possède des bases solides en bureautique, maintenance informatique, design commercial et une bonne maîtrise des réseaux sociaux"</p>
+    </div>
+    <h5 class="cadre text-uppercase">éducation</h5> <br><br>
+    <div class="container-fluid row align-items-center mb-5">
+        <div class="col-5 d-none d-lg-inline-block align-items-center" data-aos="ade" data-aos-duration="1500">
+            <img src="experience.png" alt="" >
+        </div>
+
+    <div class="experience pr-5 pl-5  col-lg-6 col-12 col-md-8 mx-md-auto " data-aos="fade-right" data-aos-duration="1500">
+            <div class=" cime d-flex  align-items-center">
+
+                <div class=""><h5 class="tomato text-uppercase">course outline</h5>
+                <h6 class="text-uppercase">autoformation en développement web </h6>
+                <span class="d-block"> janvier, 2020 - à présent</span>
+                <p style="font-style: italic;" class="text-muted"> 
+www.pierre-giraud.com <br>
+www.openclassrom.com <br>
+www.codeur.com </p>
+                </div>
+                </div>
+                <hr style="border: 1px dashed coral;">
+ 
+            <div class="cime d-flex  align-items-center" >
+                <div class="order-md-2"><h5 class="tomato text-uppercase"> BAC+1 GÉNIE LOGICIEL</h5>
+                <h6 class="text-uppercase"> IUS -  INSTITUT UNIVERSITAIRE SIANTOU</h6>
+                <span class="d-block"> septembre, 2020 - juillet, 2021</span>
+                <p style="font-style: italic;" class="text-muted">formation en cours du jours génie logiciel </p>
+                </div>
+                </div>
+                <hr style="border: 1px dashed coral;">
+                <div class="cime d-flex justify-content-end align-items-center ">
+                    <div><h5 class="tomato text-uppercase"> baccalauréat fig (fiscalité et informatique de gestion)</h5>
+                    <h6 class="text-uppercase"> LYTEK - lycée technique d'ekounou</h6>
+                    <span class="d-block"> septembre, 2019 - juillet, 2020</span>
+                    <p style="font-style: italic;" class="text-muted">baccalauréat techniques commerciales et informatiques </p>
+                    </div>
+                    </div>
+                    <hr style="border: 1px dashed coral;">
+                    <div class="cime d-flex justify-content-end align-items-center " >
+                        <div><h5 class="tomato text-uppercase">PROBATOIRE FIG (fiscalité et informatique de gestion)</h5>
+                        <h6 class="text-uppercase"> LYTEK - Lycée technique d'ekounou</h6>
+                        <span class="d-block"> septembre, 2018 - juillet, 2019</span>
+                        <p style="font-style: italic;" class="text-muted"> probatoire techniques commerciales et informatiques </p>
+                        </div>
+                        </div>
+                        <hr style="border: 1px dashed coral;">
+                        <div class="cime d-flex  align-items-center " >
+                            <div><h5 class="tomato text-uppercase">BEPC (bervet d'etude du premier cycle)</h5>
+                            <h6 class="text-uppercase"> LYNN - Lycée bilingue de nkolndongo</h6>
+                            <span class="d-block"> septembre, 2016 - juillet, 2017</span>
+                            <p style="font-style: italic;" class="text-muted"> brevet d'enseignement general secondaire </p>
+                            </div>
+                            </div>
+                            <hr style="border: 1px dashed coral;">
+                            <div class="cime d-flex  align-items-center " >
+                                <div><h5 class="tomato text-uppercase">CEP (certificat d'etude primaire)</h5>
+                                <h6 class="text-uppercase">ecole publique de kondenqui</h6>
+                                <span class="d-block"> septembre, 2014 - juillet, 2015</span>
+                                <p style="font-style: italic;" class="text-muted"> certificat d'enseignement primaire  </p>
+                                </div>
+                                </div>
+                        
+
+
+            <div></div>
+        </div>
+    </div>
+</div>
+    <h5 class="cadre text-uppercase">expériences professionnelles</h5> <br><br>
+
+    <div class=" container-fluid row align-items-center  ">
+        <div class="col-lg-6 col-12 col-md-8 ml-3">
+    <div class="" data-aos="fade-up" data-aos-duration="1000">
+    <div class="w-50 mx-auto text-center">
+        <img src="dgi.jpg" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">stagiaire en recouvrement et contatieux fiscale</h5>
+    <h6 class="text-uppercase"> cime - centre d'impots des moyennes entreprise</h6>
+    <span class="d-block"> mai, 2020 - juin, 2021</span>
+    <p style="font-style: italic;" class="text-muted"> recouvrement des creances des contribuable deffaillant  </p>
+    </div>
+    </div>
+<div data-aos="fade-right" data-aos-duration="1000">
+    <div class="w-50 mx-auto text-center">
+        <img src="academic.jpg" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">stagiaire en développement web </h5>
+    <h6 class="text-uppercase"> Académie du web</h6>
+    <span class="d-block"> mai, 2021 - juillet, 2021</span>
+    <p style="font-style: italic;" class="text-muted"> développement et hébergement des sites web </p>
+    </div>
+</div>
+<div data-aos="fade" data-aos-duration="1000">
+    <div class="w-50 mx-auto text-center">
+        <img src="canal.png" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">stagiaire en maintenance</h5>
+    <h6 class="text-uppercase">canal+ Cameroun</h6>
+    <span class="d-block"> août, 2021 - octobre, 2021</span>
+    <p style="font-style: italic;" class="text-muted"> installation et maintenance des paraboles et kits canal+  </p>
+    </div>
+</div>
+<div data-aos="fade-down" data-aos-duration="1000">
+    <div class="w-50 mx-auto text-center">
+        <img src="chaumage.jpg" alt="cime" class="rounded-circle position-relative " style="width: 80px; height: 80px; top: 60px;">
+    </div>
+
+    <div class="order-md-2 experience pt-5 text-center"><h5 class="tomato text-uppercase">chômeur</h5>
+    <h6 class="text-uppercase">--------------------------</h6>
+    <span class="d-block"> octobre, 2021 - à présent</span>
+    <p style="font-style: italic;" class="text-muted"> la vie m'enseigne <span style="font-style: normal;">😂😂</span>  </p>
+    </div>
+</div>
+
+
+</div>
+<div class="col-5 d-none d-lg-inline-block text-right" data-aos="ade-right" data-aos-duration="1500">
+    <img src="ecoles.png" alt="" >
+</div>
+</div>
+
+    <h5 class=" text-uppercase ml-2 hvr-underline-from-right  underline-lef " id="p" style="border: solid 2px tomato; display: inline;">compentences</h5>
+    <h5 class=" text-uppercase ml-5  mt-3" id="parent"> techonoligie web</h5>
+    <div class="ml-5 style" id="soulign" style="max-width: 100px; height: 5px;">
+        
+    </div>
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-column flex-lg-row mt-5">
+        <div class="mb-5"  id="competences">
+            <div class="elts" id="">
+            <h5 class="text-uppercase text-center text-muted"> langages</h5>
+            <hr>
+                <h6 class="text-uppercase">html</h6>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="html"><span class="text-center"> 92%</span></div>
+                </div>
+                <h6 class="text-uppercase">css</h6>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; width: 0px;" id="css"> <span class="text-center">85%</span></div>
+                </div>
+                <h6 class="text-uppercase">javascripts</h6>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="javascripts"><span class="text-center">75%</span></div>
+                </div>
+                <h6 class="text-uppercase">php</h6>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="php"> <span class="text-center">70%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5 elts" >
+            <h5 class="capitalize text-center text-uppercase text-muted">librerie</h5>
+            <hr>
+            <div>
+                <h6 class="text-uppercase"  >jquery/  javascripts</h6>
+                <div class="progress w-100">
+                    <div class="progress-bar"  role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="jquery"><span class="text-center">60%</span></div>
+                </div>
+                <h6 class="text-uppercase">bootstrap/ css</h6>
+                <div class="progress"id="librerie" >
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="bootstrap"><span class="text-center">95%</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5 elts">
+            <h5 class="text-uppercase text-center  text-muted">cms</h5>
+            <hr>
+            <div>
+                <h6 class="text-uppercase" > wordpress</h6>
+                <div class="progress">
+                    <div class="progress-bar  " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="wordpress"> <span class="ext-center"> 85%</span></div>
+                </div>
+                <h6 class="text-uppercase">prestashop</h6>
+                <div class="progress" id="cmd" >
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="prestashop"> <sapn class="ext-center"> 60%</sapn></div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5 elts" >
+            <h5 class="text-uppercase text-center  text-muted">base de donnees</h5>
+            <hr>
+            <div>
+                <h6 class="text-uppercase" > mysql</h6>
+                <div class="progress">
+                    <div class="progress-bar  " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="mysql"> <span class="ext-center"> 75%</span></div>
+                </div>
+                <h6 class="text-uppercase">sql</h6>
+                <div class="progress" id="donnees" >
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="sql"> <sapn class="ext-center"> 60%</sapn></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class=" text-uppercase ml-5 "> autres</h5>
+    <div class="style ml-5"></div>
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-column flex-lg-row">
+        <div class="mb-5"  id="competences">
+            <div class="elts" id="">
+            <h5 class="text-uppercase text-center text-muted"> bureautique</h5>
+            <hr>
+                <h6 class="text-uppercase">word</h6>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="word"><span class="text-center"> 82%</span></div>
+                </div>
+                <h6 id="bureautique" class="text-uppercase">excel</h6>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="excel"> <span class="text-center">75%</span></div>
+                </div>
+                <h6 class="text-uppercase" >acces</h6>
+                <div class="progress">
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato; " id="acces"><span class="text-center">70%</span></div>
+                </div>
+                <h6 class="text-uppercase">powepoints</h6>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="powerpoint"> <span class="text-center">60%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-5 elts" >
+            <h5 class="capitalize text-center text-uppercase text-muted">maintenance informatique</h5>
+            <hr>
+            <div>
+                <h6 id="maintenance" class="text-uppercase" >materiel</h6>
+                <div class="progress w-100">
+                    <div class="progress-bar"  role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="materiel"><span class="text-center">60%</span></div>
+                </div>
+                <h6 class="text-uppercase">systeme</h6>
+                <div class="progress"id="librerie" >
+                    <div class="progress-bar " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="systeme"><span class="text-center">95%</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-5 elts">
+            <h5 class="text-uppercase text-center  text-muted">desgn graphique</h5>
+            <hr>
+            <div>
+                <h6  class="text-uppercase" > photoshop</h6>
+                <div class="progress">
+                    <div class="progress-bar  " role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="photoshop"> <span class="ext-center"> 85%</span></div>
+                </div>
+                <h6  class="text-uppercase">canvas</h6>
+                <div class="progress" >
+                    <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="background-color: tomato;" id="canvas"> <sapn class="ext-center"> 60%</sapn></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <h5 class="cadre text-uppercase" id="graphique" >
+        personnel
+    </h5>
+    <div class="container-fluid row">
+        <div class="col-11 col-lg-5 " >
+            <h5 class="text-uppercase ml-5 mt-3">qualités</h5>
+            <div class="style ml-5"></div>
+            <div class="experience w-100 p-3" style="font-weight: 700;" data-aos="fade-right" data-aos-duration="1000">
+                <div class="">créativité</div>
+                <div class="">adaption</div>
+                <div class="">bon negocieur</div>
+                <div class=""> un peu blagueur</div>
+                <div class=""> etc..</div>
+            </div>
+        </div>
+        <div class=" col-11 col-lg-5" >
+            <h5 class="text-uppercase ml-5 mt-3">centres d'interets</h5>
+            <div class="style ml-5 "></div>
+            <div class="experience w-100 p-3" style="font-weight: 700;" data-aos="fade-down" data-aos-duration="1000">
+                <div class="">jeux video</div>
+                <div class="">musique</div>
+                <div class="">lecture</div>
+                <div class=""> reseaux sociaux</div>
+                <div class=""> etc..</div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h5 class="cadre text-uppercase mb-3 ">projets</h5> <br> <br>
+    <h6 class=" text-uppercase ml-5 mt-3 mb-3 h5 d-inline"> realises</h6> <!--<span class="badge rounded-circle text-light p-4 ml-4   " style="background-color: tomato;">6</span> <br>-->
+    <div class="style ml-5 mb-3"></div>
+   <div class="container-fluid row mx-auto ">
+        <div class="experience col-10 col-md-5  " data-aos="zoom-in" data-aos-duration="1000"> 
+            <h5 class=" text-uppercase pl-3 pt-3">utlitaires</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+calculatrice, convertisseur de devices, convertisseur binaire etc...
+            </p>
+            <div class="text-right p-3">
+                <a href="utilitaires.html">lien</a>
+            </div>
+        </div>
+        <div class="experience col-10 col-md-5 mx-auto  " data-aos="fade-right" data-aos-duration="1000"> 
+            <h5 class=" text-uppercase pl-3 pt-3">sublime deco</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+site vitrine prestataire de service; decoration et d'amenagement
+            </p>
+            <div class="text-right p-3">
+                <a href="deco.html">lien</a>
+            </div>
+        </div>
+        </div>
+        <div class="container-fluid row mx-auto">
+        <div class="experience col-10 col-md-5" data-aos="zoom-down" data-aos-duration="1000"> 
+            <h5 class=" text-uppercase pl-3 pt-3">mes design graphique</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+affiches publicitaires, carte de visite etc...
+            </p>
+            <div class="text-right p-3">
+                <a href="affiches.html">lien</a>
+            </div>
+        </div>
+        </div>
+        <h6 class="ml-5 text-uppercase">en cours</h6>
+        <div class="style ml-5"></div>
+        <div class="experience col-10 col-md-5 mx-auto mx-md-5" data-aos="fade" data-aos-duration="1000"> 
+            <h5 class=" text-uppercase pl-3 pt-3">partenaire fiable</h5>
+            <hr style="border: 1px dashed tomato;">
+            <p class="text-muted" style="font-style: italic;">
+site web de racontre de partenaire d'affaire fiable.
+            </p>
+            <div class="text-right p-3">
+                <a href="autres.html">lien</a>
+            </div>
+        </div>
+        <div class="w-75 text-center mx-auto mb-5 mt-5">
+            <h5 class=" text-center mx-auto text-uppercase cadre mb-5" > contactez-moi</h5>
+            <p class=" mt-4" style="font-weight: 800;"> n'hesitez pas a m'envoyer un message ou me contacter</p>
+                </div>
+                <div class="mb-5" data-aos="fade-right" data-aos-duration="1500">
+                    <form action="" method="post" class="mx-auto">
+                        <input type="text" placeholder="nom ou prenom" class="experience col-10 col-lg-6 p-2 input ">
+                        <input type="email" placeholder="E-mail" class="experience col-10 col-lg-6 p-2 input">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="message" class="experience col-10 col-lg-6 p-2 " style="height: 120px;"></textarea> <br>
+                        <input type="submit" value="envoyer" class="text-uppercase text-light submit " style="background-color: tomato;">
+                    </form>
+                </div>
+             <div class="mb-5" data-aos="fade-down" data-aos-duration="3000">
+                 <div class="experience col-11 col-lg-6 p-2">
+                     <h5 class="text-uppercase">e-mail:</h5>
+                     <p>fmaguoa@gmail.com</p>
+                 </div>
+                 <div class="experience col-11 col-lg-6 p-2">
+                     <h5 class="text-uppercase ">telephone:</h5>
+                     <p>+237 697896432</p>
+                 </div>
+                 <div class="experience col-11 col-lg-6 p-2">
+                     <h5 class="text-uppercase">adresse:</h5>
+                     <p> essos-yaoundé(centre-cameroun)</p>
+                 </div>
+             </div>
+             <a href="cv.pdf" download="cv-biloo" class="d-flex justify-content-end col-12 ">
+             <img src="pdf.png" alt="" style="width: 50px; height: 50px;" class="button">
+             </a>
+<footer class="w-100 mt-3" style="height: 60px; background-color: tomato; margin: 0px; padding: 0px;">
+    <div class="text-center position-relative" style="bottom: 25px;">
+        <a href="https://www.facebook.com/freddyde.maman?mibextid=ZbWKwL">
+        <img src="facebook.png" alt="lien Facebook" class="reseaux mr-1">
+    </a>
+<a href="https://cutt.ly/mCK6T17">
+        <img src="whatsapp.png" alt="lien whai" class="reseaux mr-1">
+</a>
+    <a href="https://www.linkedin.com/in/bilo-o-freddy-aba6a7266">
+        <img src="linkedin.png" alt="lien LinkedIn" class="reseaux mr-1">
+    </a>
+
+    </div>
+    <p class="text-center position-relative text-muted" style="bottom: 25px;">© 2023 - <span class="text-capitalize">  bilo'o freddy </span> <span class="text-italic" style="font-style: italic;"> tous droits réservés. </span> </p>
+</footer>
+
+
+
+        <script>
+            
+// Ajoute les classes pour les animations
+function BarAnimation() {
+  document.getElementById('html').classList.add('html');
+  document.getElementById('css').classList.add('css');
+  document.getElementById('javascripts').classList.add('javascripts');
+  document.getElementById('php').classList.add('php');
+
+}
+function BarAnimation1(){
+    document.getElementById('jquery').classList.add('jquery');
+  document.getElementById('bootstrap').classList.add('bootstrap');
+}
+function BarAnimation2(){
+    document.getElementById('prestashop').classList.add('prestashop');
+  document.getElementById('wordpress').classList.add('wordpress');
+}
+function bureautique() {
+  document.getElementById('word').classList.add('word');
+  document.getElementById('excel').classList.add('excel');
+  document.getElementById('acces').classList.add('acces');
+  document.getElementById('powerpoint').classList.add('powerpoint');
+
+}
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval5 = setInterval(function() {
+    if ( checkVisible(document.getElementById('bureautique')))     {
+        bureautique();
+        clearInterval(interval5); // Désactive le SetInterval
+    }
+}, 300);
+// donnees
+function donnees(){
+    document.getElementById('mysql').classList.add('mysql');
+  document.getElementById('sql').classList.add('sql');
+}
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval6 = setInterval(function() {
+    if ( checkVisible(document.getElementById('donnees')))     {
+        donnees();
+        clearInterval(interval6); // Désactive le SetInterval
+    }
+}, 300);
+//maintenance
+function maintenance(){
+    document.getElementById('materiel').classList.add('materiel');
+  document.getElementById('systeme').classList.add('systeme');
+}
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval7 = setInterval(function() {
+    if ( checkVisible(document.getElementById('maintenance')))     {
+        maintenance();
+        clearInterval(interval7); // Désactive le SetInterval
+    }
+}, 300);
+//graphique
+function graphique(){
+    document.getElementById('photoshop').classList.add('photoshop');
+  document.getElementById('canvas').classList.add('canvas');
+}
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval8 = setInterval(function() {
+    if ( checkVisible(document.getElementById('maintenance')))     {
+        graphique();
+        clearInterval(interval8); // Désactive le SetInterval
+    }
+}, 300);
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+
+
+// Check si l'element passé en param est affiché sur l'écran
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+//Regarde si la div competence est affichée toutes les 250ms puis désactive l'interval
+var interval = setInterval(function() {
+    if ( checkVisible(document.getElementById('competences')))     {
+        BarAnimation();
+        clearInterval(interval); // Désactive le SetInterval
+    }
+}, 300);
+var interval3 = setInterval(function() {
+    if ( checkVisible(document.getElementById('cmd')))     {
+        BarAnimation2();
+        clearInterval(interval3); // Désactive le SetInterval
+    }
+}, 300);
+var interval2= setInterval(function() {
+    if ( checkVisible(document.getElementById('librerie')))     {
+        BarAnimation1();
+        clearInterval(interval2); // Désactive le SetInterval
+    }
+}, 300);
+        </script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({once:true});
+        </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
