@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Convertisseur de distances</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+    background-color:whitesmoke;
+}
+
+.wrapper {
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.convert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 4rem;
+    color: black;
+}
+
+input,
+select {
+    padding: 0.8rem 1rem;
+    background-color: white;
+    border: 1px solid darkgray;
+}
+
+select {
+    cursor: pointer;
+}
+
+input,
+button,
+select {
+    border-radius: 5px;
+}
+
+ion-icon {
+    font-size: 6rem;
+    color: rgb(7, 45, 168);
+}
+
+button {
+    display: block;
+    margin: 4rem auto 0 auto;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+    background-color: green;
+    border: 1px solid green;
+    color: inherit;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Convertisseur de distances</h1>
+        <div class="convert">
+            <div class="convert-input">
+                <input type="number" name="first-value" id="first-value" min="0" step="0.1" />
+                <select name="first-unit" id="first-unit" class="mb-2">
+                    <option value="km">Kilomètre</option>
+                    <option value="m" selected>Mètre</option>
+                    <option value="cm">Centimètre</option>
+                    <option value="mm">Millimètre</option>
+                </select>
+            </div>
+            <ion-icon name="caret-down"></ion-icon>
+            <div class="convert-input">
+                <input type="number" name="second-value" id="second-value" disabled />
+                <select name="second-unit" id="second-unit">
+                    <option value="km">Kilomètre</option>
+                    <option value="m">Mètre</option>
+                    <option value="cm" selected>Centimètre</option>
+                    <option value="mm">Millimètre</option>
+                </select>
+            </div>
+        </div>
+        <button id="convert-btn">Convertir</button>
+    </div>
+    <script src="app.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+      let value1El = document.getElementById("first-value");
+let unit1El = document.getElementById("first-unit");
+let value2El = document.getElementById("second-value");
+let unit2El = document.getElementById("second-unit");
+let btnEl = document.getElementById("convert-btn");
+
+const convertValue = () => {
+    let value1 = value1El.value;
+    let unit1 = unit1El.value;
+    let unit2 = unit2El.value;
+    let value1InLegalUnit;
+    let convertedValue;
+
+    switch (unit1) {
+        case "km":
+            value1InLegalUnit = value1 * 1000;
+            break;
+        case "cm":
+            value1InLegalUnit = value1 / 100;
+            break;
+        case "mm":
+            value1InLegalUnit = value1 / 1000;
+            break;
+        default:
+            value1InLegalUnit = value1;
+    }
+
+    switch (unit2) {
+        case "km":
+            convertedValue = value1LegalUnit / 1000;
+            break;
+        case "cm":
+            convertedValue = value1InLegalUnit * 100;
+            break;
+        case "mm":
+            convertedValue = value1InLegalUnit * 1000;
+            break;
+        default:
+            convertedValue = value1InLegalUnit;
+    }
+
+    console.log(value1);
+    console.log(unit1);
+    console.log(unit2);
+    console.log(value1InLegalUnit);
+    console.log(convertedValue);
+
+    value2El.value = convertedValue;
+};
+
+btnEl.addEventListener("click", convertValue);
+unit2El.addEventListener("change", () => {
+    value2El.value = "";
+});
+  </script>
+
+</body>
+</html>

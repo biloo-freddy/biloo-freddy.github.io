@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Calculator with vanilla Javascript</title>
+  <style>
+	  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+:root {
+	--background-color: #eaeaea;
+	--black-color: #22252d;
+	--black-light: #292d36;
+	--grey-color: #f9f9f9;
+	--white-color: #ffffff;
+	--primary-color: #26fcd5;
+	--secondary-color: #f38282;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: var(--background-color);
+}
+.container {
+	width: 320px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	height: 560px;
+	border-radius: 24px;
+	position: relative;
+	overflow: hidden;
+	background: var(--black-color);
+	transition: all 0.3s;
+}
+.container.light {
+	background-color: var(--white-color);
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+/* Styling Header Part */
+header nav {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.4em 1em;
+	color: var(--grey-color);
+	transition: all 0.3s;
+}
+header nav.light,
+nav .time h1.light {
+	color: var(--black-light);
+}
+nav .time h1 {
+	color: var(--grey-color);
+	font-size: 0.9rem;
+	font-weight: 400;
+	transition: all 0.3s;
+}
+
+nav .navMenu {
+	display: flex;
+	align-items: center;
+	gap: 0.3em;
+}
+nav .navMenu .item {
+	list-style: none;
+}
+nav .navMenu .item span {
+	font-size: 1.2rem;
+}
+nav .navMenu .item span.battery {
+	transform: rotate(90deg);
+	font-size: 1.5rem;
+	margin-top: 0.1em;
+}
+
+/* Styling Toggle Button */
+.toggleBtn {
+	display: flex;
+	justify-content: center;
+}
+.toggleBtn .modeBtn {
+	display: flex;
+	background: var(--black-light);
+	border-radius: 10px;
+	padding: 0.2em;
+	overflow: hidden;
+	color: var(--grey-color);
+	transition: all 0.3s;
+}
+.toggleBtn .modeBtn .modeIcon.active {
+	background: var(--black-color);
+	opacity: 1;
+}
+.toggleBtn .modeBtn .modeIcon {
+	padding: 0.3em 0.5em;
+	border-radius: 8px;
+	opacity: 0.5;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+.toggleBtn .modeBtn.light {
+	color: var(--black-light);
+	background-color: var(--grey-color);
+}
+.toggleBtn .modeBtn .modeIcon.light.active {
+	background: var(--white-color);
+	opacity: 1;
+}
+
+.container .form {
+	/* border: 1px solid red; */
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.container .form .display > input {
+	width: 100%;
+	height: 80px;
+	margin: 1em 0;
+	padding: 0 0.5em;
+	outline: none;
+	border: none;
+	text-align: right;
+	color: var(--grey-color);
+	background: transparent;
+	pointer-events: none;
+	letter-spacing: 1px;
+	font-size: 1.4rem;
+	transition: all 0.3s;
+}
+.container .form .display > input.light {
+	color: var(--black-light);
+}
+.buttons {
+	padding: 2em 1em 1em;
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(4, 1fr);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: var(--black-light);
+	border-radius: 25px 25px 0 0;
+	transition: all 0.3s;
+}
+.buttons.light {
+	background-color: var(--grey-color);
+}
+.buttons .topBtns.light,
+.buttons .topBtns {
+	color: var(--primary-color);
+}
+.buttons > input {
+	height: 50px;
+	background-color: #272b33;
+	color: var(--grey-color);
+	font-size: 1rem;
+	border: none;
+	outline-color: transparent;
+	border-radius: 10px;
+	cursor: pointer;
+	box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+	transition: all 0.3s;
+}
+.buttons > input:hover {
+	background: var(--grey-color);
+	color: var(--black-light);
+}
+.buttons > input.light {
+	color: var(--black-color);
+	background-color: var(--white-color);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s;
+}
+.buttons > input.light:hover {
+	color: var(--grey-color);
+	background-color: var(--black-light);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.buttons > .operators.light,
+.buttons > .operators {
+	color: var(--secondary-color);
+	font-size: 1.6rem;
+}
+  </style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="container">
+	<header>
+		<nav>
+			<div class="time">
+				<h1>
+					<span id="hrs"></span>
+					<span>:</span>
+					<span id="mins"></span>
+					<span id="ampm"></span>
+				</h1>
+			</div>
+			<ul class="navMenu">
+				<li class="item">
+					<span class="material-symbols-outlined">
+						
+					</span>
+				</li>
+				<li class="item">
+					<span class="material-symbols-outlined">
+						
+					</span>
+				</li>
+				<li class="item">
+					<span class="material-symbols-outlined battery">
+						
+					</span>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<section class="toggleBtn">
+		<div class="modeBtn">
+			<span class="material-symbols-outlined modeIcon" id="light">
+				clair
+			</span>
+			<span class="material-symbols-outlined modeIcon active" id="dark">
+				sombre
+			</span>
+		</div>
+	</section>
+
+	<form action="" class="form">
+		<section class="display">
+			<input type="text" readonly name="display" />
+		</section>
+
+		<section class="buttons" id="buttonsWrapper">
+			<input type="button" value="AC" class="topBtns" />
+			<input type="button" value="DEL" class="topBtns" />
+			<input type="button" value="&percnt;" class="topBtns" />
+			<input type="button" value="&divide;" class="operators" />
+			<input type="button" value="7" />
+			<input type="button" value="8" />
+			<input type="button" value="9" />
+			<input type="button" value="&times;" class="operators" />
+			<input type="button" value="4" />
+			<input type="button" value="5" />
+			<input type="button" value="6" />
+			<input type="button" value="&minus;" class="operators" />
+			<input type="button" value="3" />
+			<input type="button" value="2" />
+			<input type="button" value="1" />
+			<input type="button" value="&plus;" class="operators" />
+			<input type="button" value="0" />
+			<input type="button" value="00" />
+			<input type="button" value="." />
+			<input type="button" value="=" class="operators" />
+		</section>
+	</form>
+</div>
+<!-- partial -->
+<script>
+	const display = document.querySelector(".display input");
+const buttons = document.querySelectorAll(".buttons input");
+
+// Select Element for time
+const Hours = document.querySelector("#hrs");
+const Mins = document.querySelector("#mins");
+const Period = document.querySelector("#ampm");
+
+// Select Element to change the theme
+const container = document.querySelector(".container");
+const buttonsWrapper = document.querySelector("#buttonsWrapper");
+const darkMode = document.querySelector("#dark");
+const lightMode = document.querySelector("#light");
+const navItem = document.querySelector("nav");
+const timeText = document.querySelector(".time h1");
+const modeBtn = document.querySelector(".modeBtn");
+const modeIcon = document.querySelectorAll(".modeIcon");
+
+// Calculator functionality
+buttons.forEach((button) => {
+	button.addEventListener("click", () => {
+		switch (button.value) {
+			case "=":
+				display.value = display.value.replace(/÷/g, "/");
+				display.value = display.value.replace(/×/g, "*");
+				display.value = display.value.replace(/−/g, "-");
+				display.value = eval(display.value);
+				break;
+			case "AC":
+				display.value = "";
+				break;
+			case "DEL":
+				display.value = display.value.slice(0, -1);
+				break;
+			default:
+				display.value += button.value;
+		}
+	});
+});
+
+const currentTime = new Date();
+
+let hours = currentTime.getHours();
+let minutes = currentTime.getMinutes();
+
+if (hours > 12) {
+	hours -= 12;
+	Hours.innerText = hours;
+	Period.innerText = "PM";
+	Mins.innerText = minutes;
+} else {
+	Hours.innerText = hours;
+	Period.innerText = "AM";
+	Mins.innerText = minutes;
+}
+
+// Event listener to change the theme
+darkMode.addEventListener("click", () => {
+	darkMode.classList.add("active");
+	lightMode.classList.remove("active");
+	buttons.forEach((button) => {
+		button.classList.remove("light");
+	});
+	buttonsWrapper.classList.remove("light");
+	container.classList.remove("light");
+	navItem.classList.remove("light");
+	timeText.classList.remove("light");
+	modeBtn.classList.remove("light");
+	modeIcon.forEach((icon) => {
+		icon.classList.remove("light");
+	});
+	display.classList.remove("light");
+});
+lightMode.addEventListener("click", () => {
+	lightMode.classList.add("active");
+	darkMode.classList.remove("active");
+	buttons.forEach((button) => {
+		button.classList.add("light");
+	});
+	container.classList.add("light");
+	buttonsWrapper.classList.add("light");
+	navItem.classList.add("light");
+	timeText.classList.add("light");
+	modeBtn.classList.add("light");
+	modeIcon.forEach((icon) => {
+		icon.classList.add("light");
+	});
+	display.classList.add("light");
+});
+</script>
+
+</body>
+</html>
