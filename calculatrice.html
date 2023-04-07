@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>biloo - calculatrice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Signika&display=swap" rel="stylesheet">
+<style>
+    /*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+:root {
+  --clr-primary-hsl-400: 200, 20%, 25%;
+  --clr-primary-hsl-500: 200, 20%, 15%;
+  
+  --clr-accent-hsl-400: 15, 100%, 60%;
+  --clr-accent-hsl-500: 15, 100%, 45%;
+  
+  --clr-neutral-hsl-100: 0, 0%, 100%;
+  --clr-neutral-hsl-200: 0, 0%, 80%;
+  --clr-neutral-hsl-300: 0, 0%, 60%;
+  --clr-neutral-hsl-400: 0, 0%, 40%;
+  --clr-neutral-hsl-500: 0, 0%, 10%;
+  
+  --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+  --clr-primary-500: hsl(var(--clr-primary-hsl-500));
+
+  --clr-accent-400: hsl(var(--clr-accent-hsl-400));
+  --clr-accent-500: hsl(var(--clr-accent-hsl-500));
+  
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-400: hsl(var(--clr-neutral-hsl-400));
+  --clr-neutral-500: hsl(var(--clr-neutral-hsl-500));
+  
+  --ff-primary: "Signika", sans-serif;
+  
+  --fw-regular: 400;
+  
+  --fs-300: 1rem;
+  --fs-400: 1.25rem;
+  --fs-500: 1.5rem;
+  --fs-600: 1.75rem;
+  --fs-700: 2rem;
+  --fs-800: 3rem;
+  --fs-900: 5rem;
+  
+  --shadow: 4px 4px 15px 3px rgba(0, 0, 0, 0.05);
+  
+  --transition: 200ms ease;
+}
+
+:root,
+.light-theme {
+  --bg-primary: var(--clr-neutral-100);
+  --bg-secondary: hsl(var(--clr-neutral-hsl-200), 0.25);
+  --text-primary: var(--clr-neutral-500);
+  
+  --default-key-bg: transparent;
+  --default-key-text: var(--clr-neutral-500);
+  --default-key-hover: hsl(var(--clr-neutral-hsl-200), 0.35);
+  --default-key-active: hsl(var(--clr-neutral-hsl-200), 0.75);
+  
+  --operator-key-bg: hsl(var(--clr-neutral-hsl-200), 0.5);
+  --operator-key-text: var(--clr-neutral-500);
+  --operator-key-hover: var(--clr-neutral-200);
+  --operator-key-active: var(--clr-neutral-300);
+  
+  --equals-key-bg: var(--clr-accent-400);
+  --equals-key-text: var(--clr-neutral-100);
+  --equals-key-hover: hsl(var(--clr-accent-hsl-500), .75);
+  --equals-key-active: var(--clr-accent-400);
+}
+
+.dark-theme {
+  --bg-primary: var(--clr-primary-400);
+  --bg-secondary: var(--clr-primary-500);
+  --text-primary: var(--clr-neutral-100);
+  
+  --default-key-bg: transparent;
+  --default-key-text: var(--clr-neutral-100);
+  --default-key-hover: var(--clr-primary-400);
+  --default-key-active: hsl(var(--clr-primary-hsl-400), 0.5);
+  
+  --operator-key-bg: var(--clr-neutral-100);
+  --operator-key-text: var(--clr-primary-500);
+  --operator-key-hover: var(--clr-neutral-200);
+  --operator-key-active: hsl(var(--clr-neutral-hsl-200), 0.75);
+  
+  --equals-key-bg: var(--clr-accent-400);
+  --equals-key-text: var(--clr-neutral-100);
+  --equals-key-hover: hsl(var(--clr-accent-hsl-500), .75);
+  --equals-key-active: hsl(var(--clr-accent-hsl-500), .5);
+}
+
+/*------------------------------------*\
+  #GLOBAL
+\*------------------------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  width: auto;
+  height: 2.5ex;
+  flex: none;
+  fill: currentColor;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-400);
+  color: var(--text-primary);
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+.center {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding-block: 3rem;
+}
+
+.grid-flow {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+
+.section-title {
+  font-size: var(--fs-700);
+}
+
+.dark-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  color: var(--text-primary);
+}
+
+.dark-theme-toggle:focus {
+  outline: 1px solid;
+  outline-offset: 0.15rem;
+}
+
+.dark-theme-toggle #dark {
+  display: block;
+}
+
+.dark-theme-toggle #light {
+  display: none;
+}
+
+.dark-theme-toggle[data-is-dark-mode="true"] #dark {
+  display: none;
+}
+
+.dark-theme-toggle[data-is-dark-mode="true"] #light {
+  display: block;
+}
+
+/*------------------------------------*\
+  #CALCULATOR
+\*------------------------------------*/
+.calculator {
+  --padding: clamp(1.5rem, 5vw, 2rem);
+  max-width: 24rem;
+  min-width: 19rem;
+  border-radius: 2rem;
+  background-color: var(--bg-primary);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.calculator__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding);
+}
+
+.calculator__display {
+  display: grid;
+  grid-template-rows: minmax(4rem, auto) minmax(2rem, auto);
+  padding: var(--padding);
+  
+  text-align: end;
+  word-break: break-all;
+  word-wrap: break-all;
+  line-height: 1;
+}
+
+.calculator__display-previous {
+  font-size: clamp(var(--fs-700), 10vw, var(--fs-800));
+}
+
+.calculator__display-current {
+  font-size: clamp(var(--fs-600), 6vw, var(--fs-700));
+}
+
+.calculator__keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  
+  background-color: var(--bg-secondary);
+  padding: var(--padding);
+}
+
+.calculator__key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  border: 0;
+  border-radius: 50%;
+  padding: 0.7em;
+  cursor: pointer;
+  font-size: clamp(var(--fs-400), 4vw, var(--fs-500));
+  background-color: var(--default-key-bg);
+  color: var(--default-key-text);
+  transition: var(--transition);
+}
+
+.calculator__key:is(:hover, :focus-visible) {
+  background-color: var(--default-key-hover);
+}
+
+.calculator__key:active {
+  background-color: var(--default-key-active);
+}
+
+.calculator__key[data-operation]:not([data-operation="remainder"]) {
+  background-color: var(--operator-key-bg);
+  color: var(--operator-key-text);
+}
+
+.calculator__key[data-operation]:not([data-operation="remainder"]):is(:hover, :focus-visible) {
+  background-color: var(--operator-key-hover);
+}
+
+.calculator__key[data-operation]:not([data-operation="remainder"]):active {
+  background-color: var(--operator-key-active);
+}
+
+.calculator__key[data-function="equals"] {
+  background-color: var(--equals-key-bg);
+  color: var(--equals-key-text);
+}
+
+.calculator__key[data-function="equals"]:is(:hover, :focus-visible) {
+  background-color: var(--equals-key-hover);
+}
+
+.calculator__key[data-function="equals"]:active {
+  background-color: var(--equals-key-active);
+}
+
+.calculator__key svg {
+  height: 1.5ex;
+}
+</style>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<main class="center">
+  
+  <div class="calculator grid-flow">
+    
+    <div class="calculator__header">
+      <h1 class="section-title">Calculatrice</h1>
+      
+      <button class="dark-theme-toggle" data-is-dark-mode="false" id="dark-theme-toggle" title="switch light/dark theme">
+        <svg id="dark" viewBox="0 0 512 512" width="100" title="moon">
+          <path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z" />
+        </svg>
+        <svg id="light" viewBox="0 0 512 512" width="100" title="sun">
+          <path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z" />
+        </svg>
+      </button>
+    </div>
+    
+    
+    
+    <div class="calculator__display">
+      <div class="calculator__display-previous" data-display="previous" aria-live="polite"></div>
+      <div class="calculator__display-current" data-display="current" aria-live="polite"></div>
+    </div>
+    
+    
+    <div class="calculator__keys">
+      <button class="calculator__key" data-function="clear">AC</button>
+      <button class="calculator__key" data-function="delete" aria-label="delete">
+        <svg viewBox="0 0 640 512" width="100" title="backspace">
+          <path d="M576 64H205.26A63.97 63.97 0 0 0 160 82.75L9.37 233.37c-12.5 12.5-12.5 32.76 0 45.25L160 429.25c12 12 28.28 18.75 45.25 18.75H576c35.35 0 64-28.65 64-64V128c0-35.35-28.65-64-64-64zm-84.69 254.06c6.25 6.25 6.25 16.38 0 22.63l-22.62 22.62c-6.25 6.25-16.38 6.25-22.63 0L384 301.25l-62.06 62.06c-6.25 6.25-16.38 6.25-22.63 0l-22.62-22.62c-6.25-6.25-6.25-16.38 0-22.63L338.75 256l-62.06-62.06c-6.25-6.25-6.25-16.38 0-22.63l22.62-22.62c6.25-6.25 16.38-6.25 22.63 0L384 210.75l62.06-62.06c6.25-6.25 16.38-6.25 22.63 0l22.62 22.62c6.25 6.25 6.25 16.38 0 22.63L429.25 256l62.06 62.06z" />
+        </svg>
+      </button>
+      <button class="calculator__key" data-operation="remainder">%</button>
+      <button class="calculator__key" data-operation="divide" aria-label="divide">
+        <svg viewBox="0 0 448 512" width="100" title="divide">
+          <path d="M224 352c-35.35 0-64 28.65-64 64s28.65 64 64 64 64-28.65 64-64-28.65-64-64-64zm0-192c35.35 0 64-28.65 64-64s-28.65-64-64-64-64 28.65-64 64 28.65 64 64 64zm192 48H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+        </svg>
+      </button>
+      <button class="calculator__key" data-number="7">7</button>
+      <button class="calculator__key" data-number="8">8</button>
+      <button class="calculator__key" data-number="9">9</button>
+      <button class="calculator__key" data-operation="times" aria-label="times">
+        <svg viewBox="0 0 352 512" width="100" title="times">
+          <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z" />
+        </svg>
+      </button>
+      <button class="calculator__key" data-number="4">4</button>
+      <button class="calculator__key" data-number="5">5</button>
+      <button class="calculator__key" data-number="6">6</button>
+      <button class="calculator__key" data-operation="minus" aria-label="minus">-</button>
+      <button class="calculator__key" data-number="1">1</button>
+      <button class="calculator__key" data-number="2">2</button>
+      <button class="calculator__key" data-number="3">3</button>
+      <button class="calculator__key" data-operation="plus" aria-label="plus">+</button>
+      <button class="calculator__key" data-function="plus-minus">+/-</button>
+      <button class="calculator__key" data-number="0">0</button>
+      <button class="calculator__key" data-number=".">.</button>
+      <button class="calculator__key" data-function="equals">=</button>
+    </div>
+    
+  </div>
+  
+</main>
+<!-- partial -->
+  <script>
+      class Calculator {
+  constructor(previousDisplay, currentDisplay) {
+    this.currentDisplay = currentDisplay;
+    this.previousDisplay = previousDisplay;
+    this.currentOperand = "";
+    this.previousOperand = "";
+    this.operation = null;
+  }
+  
+  append(number) {
+    if (number === "." && this.currentOperand.includes(".")) return;
+  
+    this.currentOperand += number.toString();
+  }
+  
+  chooseOperation(operation) {
+    if (!this.currentOperand) return;
+    
+    if (this.currentOperand.length === 1 && this.currentOperand.includes(".")) {
+      this.currentOperand = `0${this.currentOperand}0`;
+    }
+    
+    if (this.currentOperand && this.previousOperand) {
+      this.compute();
+    }
+    
+    switch (operation) {
+      case "plus":
+        this.currentOperand += "+";
+        break;
+      case "minus":
+        this.currentOperand += "-";
+        break;
+      case "times":
+        this.currentOperand += "×";
+        break;
+      case "divide":
+        this.currentOperand += "÷";
+        break;
+      case "remainder":
+        this.currentOperand += "mod";
+        break;
+      default:
+        break;
+    }
+    
+    const firstNumber = this.currentOperand.slice(0, 1);
+    const lastNumber = this.currentOperand.slice(this.currentOperand.length - 1);
+    
+    if (firstNumber === ".") this.currentOperand = `0${this.currentOperand}`;
+    if (lastNumber === ".") this.currentOperand += "0";
+    
+    this.operation = operation;
+    this.previousOperand = this.currentOperand;
+    this.currentOperand = "";
+  }
+  
+  compute() {
+    if (!this.previousOperand || !this.currentOperand) return;
+    
+    let result;
+    const prev = parseFloat(this.previousOperand);
+    const curr = parseFloat(this.currentOperand);
+    
+    switch (this.operation) {
+      case "plus":
+        result = prev + curr;
+        break;
+      case "minus":
+        result = prev - curr;
+        break;
+      case "times":
+        result = prev * curr;
+        break;
+      case "divide":
+        result = prev / curr;
+        break;
+      case "remainder":
+        result = prev % curr;
+        break;
+      default:
+        break;
+    }
+    
+    this.previousOperand += this.currentOperand;
+    this.currentOperand = result;
+  }
+  
+  switchSign() {
+    if (!this.currentOperand) return;
+    
+    if (this.currentOperand.length === 1 && this.currentOperand.includes(".")) {
+      this.currentOperand = `0${this.currentOperand}`;
+    }
+    
+    // Toggle the sign (+/-)
+    if (this.currentOperand.includes("-")) {
+      this.currentOperand = this.currentOperand.slice(1, this.currentOperand.length);
+    } else {
+      this.currentOperand = `-${this.currentOperand}`;
+    }
+    
+  }
+  
+  delete() {
+    if (this.currentOperand.length === 0 && this.previousOperand) {
+      this.previousOperand = "";
+      this.operation = null;
+    }
+    
+    this.currentOperand = this.currentOperand.toString().slice(0, -1);
+  }
+  
+  clear() {
+    this.currentOperand = "";
+    this.previousOperand = "";
+    this.operation = null;
+  }
+  
+  update() {
+    this.currentDisplay.innerText = this.currentOperand;
+    this.previousDisplay.innerText = this.previousOperand;
+  }
+}
+
+const { log } = console;
+const operationKeys = document.querySelectorAll("[data-operation]");
+const numberKeys = document.querySelectorAll("[data-number]");
+const functionKeys = document.querySelectorAll("[data-function]");
+
+const previousDisplay = document.querySelector("[data-display='previous']");
+const currentDisplay = document.querySelector("[data-display='current']");
+
+const calculator = new Calculator(previousDisplay, currentDisplay);
+
+numberKeys.forEach((key) => {
+  key.addEventListener("click", (e) => {
+    calculator.append(key.dataset.number);
+    calculator.update();
+  });
+});
+
+operationKeys.forEach((key) => {
+  key.addEventListener("click", (e) => {
+    calculator.chooseOperation(key.dataset.operation);
+    calculator.update();
+  });
+});
+
+functionKeys.forEach((key) => {
+  key.addEventListener("click", (e) => {
+    switch (key.dataset.function) {
+      case "equals":
+        calculator.compute();
+        calculator.update();
+        break;
+      case "delete":
+        calculator.delete();
+        calculator.update();
+        break;
+      case "clear":
+        calculator.clear();
+        calculator.update();
+        break;
+      case "plus-minus":
+        calculator.switchSign();
+        calculator.update();
+        break;
+      default:
+        log("function");
+        break;
+    }
+  });
+});
+
+/*------------------------------------*\
+  Toggle Theme
+\*------------------------------------*/
+
+const toggleThemeBtn = document.getElementById("dark-theme-toggle");
+
+toggleThemeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+  
+  const isDarkMode = toggleThemeBtn.dataset.isDarkMode;
+  
+  if (isDarkMode === "true") {
+    toggleThemeBtn.setAttribute("data-is-dark-mode", "false");
+  } else {
+    toggleThemeBtn.setAttribute("data-is-dark-mode", "true");
+  }
+});
+
+
+/* ============== 
+  Resources
+    - https://search.muz.li/inspiration/calculator-design/ - for inspiration
+    - https://calculator-color-schemes.vercel.app/ - for naming classes and theme adjustments
+    - https://youtu.be/KqFAs5d3Yl8 - for html and css writing style | Kevin Powell
+================= */
+  </script>
+
+</body>
+</html>

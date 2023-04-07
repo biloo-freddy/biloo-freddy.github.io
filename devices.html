@@ -28,10 +28,20 @@
         .div2{
             height: 100vh;
         }
+        .span{
+            background-color: rgb(117, 231, 117);
+        }
+        input{
+            outline: none;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 2px solid black;
+        }
     </style>
 </head>
 <body>
-    <div class="row align-items-center justify-content-center ml-2 d-flex align-items-center div2">
+    <div class="row align-items-center justify-content-center  d-flex align-items-center div2">
     <div class=" div1 text-center col-11 col-lg-8 ">
     <h1 class=" text-center text-uppercase text-truncate h5"> convertisseur</h1>
     <h6 class="text-uppercase">monnaie</h6>
@@ -40,18 +50,18 @@
         <div class="input-group mb-3 mt-5 ml-2  ">
             <input type="number" name="euro" id="euro" class="">
             <div class="input-group-append">
-                <span class="input-group-text">,00 EURO</span>
+                <span class="input-group-text span ">,00 EURO</span>
             </div>
         </div>
         <div class="input-group mb-1 ml-2 ">
             <input type="number" name="fcfa" id="fcfa" form-control>
             <div class="input-group-append">
-                <span class="input-group-text">,00 FCFA</span>
+                <span class="input-group-text span">,00 FCFA</span>
             </div>
         </div>
         <div class="input-group mb-1 ml-1 mt-3 pb-5">
             <input type="number" name="dollar" id="dollar" class="">
-            <div class="input-group-append"><span class="input-group-text">,00 DOLLAR</span></div>
+            <div class="input-group-append"><span class="input-group-text span">,00 DOLLAR</span></div>
         </div>
         <span class="d-block text-danger" id="affiche"></span>
         
