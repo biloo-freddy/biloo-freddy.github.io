@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>biloo- convertisseur de monnaie</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/dist/js/bootstrap.js">
+    <style>
+        .div1{
+            border-radius: 30px;
+            border: 1px solid whitesmoke;
+            box-shadow: whitesmoke 0px 0px 5px;
+            background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+        body{
+            background-color: white;
+    background-color: whitesmoke;
+    min-height: 100vh;
+
+    font-family: sans-serif;
+    background-color:whitesmoke;
+
+        }
+        .div2{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="row align-items-center justify-content-center ml-2 d-flex align-items-center div2">
+    <div class=" div1 text-center col-11 col-lg-8 ">
+    <h1 class=" text-center text-uppercase text-truncate h5"> convertisseur</h1>
+    <h6 class="text-uppercase">monnaie</h6>
+    <div class=" col-11 col-lg-8 mx-auto">
+    <form action="" method="post" class="text-center" >
+        <div class="input-group mb-3 mt-5 ml-2  ">
+            <input type="number" name="euro" id="euro" class="">
+            <div class="input-group-append">
+                <span class="input-group-text">,00 EURO</span>
+            </div>
+        </div>
+        <div class="input-group mb-1 ml-2 ">
+            <input type="number" name="fcfa" id="fcfa" form-control>
+            <div class="input-group-append">
+                <span class="input-group-text">,00 FCFA</span>
+            </div>
+        </div>
+        <div class="input-group mb-1 ml-1 mt-3 pb-5">
+            <input type="number" name="dollar" id="dollar" class="">
+            <div class="input-group-append"><span class="input-group-text">,00 DOLLAR</span></div>
+        </div>
+        <span class="d-block text-danger" id="affiche"></span>
+        
+    </form>
+    </div>
+    </div>
+    </div>
+    <script>
+        var fcfa=document.getElementById('fcfa');
+        var euro= document.getElementById('euro');
+        var afficher=document.getElementById('affiche');
+        var dollar=document.getElementById('dollar');
+        euro.addEventListener('input',ok)
+        
+        function ok(){
+            var fc=fcfa.value=this.value*654.56;
+            afficher.innerHTML='';
+            dollar.value=this.value*1.1;
+        };
+        euro.addEventListener('input',function(){
+            var dol=this.value/0.915981;
+            dollar.value=dol;
+        })
+        fcfa.addEventListener('input',function(){
+           var eu= this.value/654.56;
+            euro.value=eu;
+            dollar.value=this.value/601.32;
+        })
+        dollar.addEventListener("input",function(){
+            fcfa.value=this.value*601.32;
+            euro.value=this.value/1.09173;
+        })
+        btn.addEventListener('click',function(){
+            if(!(euro.value='')){
+                if(!(fcfa.value='')){
+                afficher.innerHTML='appeler votre banquier et demande un remboursement du solde manqunat';
+            euro.value=fcfa.value/700;
+        fcfa.value=euro.value*700;}
+                else{
+                    afficher.innerHTML='veuillez remplir au moins un champs avant de valider la conversion';
+                    euro.value=eu;
+        fcfa.value=euro.value/700;
+                }
+            }
+            else{
+                afficher.innerHTML='appeler votre banquier et demande un remboursement du solde manquna';
+            }
+        })
+
+    </script>
+</body>
+</html>
