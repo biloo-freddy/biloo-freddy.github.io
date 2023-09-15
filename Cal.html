@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Calculatrice</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" id="result" class="form-control" readonly>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button onclick="numberClick('7')" class="btn btn-secondary btn-block">7</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="numberClick('8')" class="btn btn-secondary btn-block">8</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="numberClick('9')" class="btn btn-secondary btn-block">9</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="operationClick('+')" class="btn btn-primary btn-block">+</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <button onclick="numberClick('4')" class="btn btn-secondary btn-block">4</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="numberClick('5')" class="btn btn-secondary btn-block">5</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="numberClick('6')" class="btn btn-secondary btn-block">6</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="operationClick('-')" class="btn btn-primary btn-block">-</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <button onclick="numberClick('1')" class="btn btn-secondary btn-block">1</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="numberClick('2')" class="btn btn-secondary btn-block">2</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="numberClick('3')" class="btn btn-secondary btn-block">3</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="operationClick('*')" class="btn btn-primary btn-block">x</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <button onclick="numberClick('0')" class="btn btn-secondary btn-block">0</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="numberClick('.')" class="btn btn-secondary btn-block">.</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="clearClick()" class="btn btn-danger btn-block">C</button>
+                            </div>
+                            <div class="col-3">
+                                <button onclick="operationClick('/')" class="btn btn-primary btn-block">÷</button>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <button onclick="calculateClick()" class="btn btn-success btn-block">Calculer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function numberClick(number) {
+            document.getElementById("result").value += number;
+        }
+
+        function operationClick(operation) {
+            document.getElementById("result").value += operation;
+        }
+
+        function clearClick() {
+            document.getElementById("result").value = "";
+        }
+
+        function calculateClick() {
+            let result = eval(document.getElementById("result").value);
+            document.getElementById("result").value = result;
+        }
+    </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
